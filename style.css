@@ -12,54 +12,50 @@ body {
     overflow-x: hidden;
 }
 
-
-.center {
-    padding-left: calc(50% - 600px);
-
-    padding-right: calc(50% - 600px);
-    margin: 0 auto;
-    max-width: auto;
-}
-
 body {
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
 }
 
-header {
+.center {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header.center {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
+    padding: 20px;
     background-color: transparent;
     position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 10;
-    color: white;
 }
 
-header::after {
+header.center::after {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 50px;
-    right: 50px;
+    left: 20px;
+    right: 20px;
     height: 1px;
     background-color: rgba(255, 255, 255, 0.3);
 }
 
-header h1 {
-    font-size: 32px;
-    color: white;
-}
-
-.menu-head {
+.menu-head nav {
     display: flex;
     gap: 30px;
-    font-weight: 400;
+}
+
+.menu-head nav a {
     color: white;
+    text-decoration: none;
 }
 
 .hero {
@@ -67,24 +63,22 @@ header h1 {
     background-size: cover;
     background-position: center;
     display: flex;
+    align-items: center;
     width: 100%;
     min-height: 100vh;
-    position: relative; 
-    padding-top: 80px;
+    position: relative;
 }
 
+.hero .center {
+    min-height: 100vh;
+    padding-top: 100px;
+}
 
 .container {
-    max-width: 1200px;
-    margin: 0;
-    margin-left: 30px;
-    margin-top: 50px;
-    padding: 0 20px;
-    color: white;
-    position: relative;
-    z-index: 2;
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    text-align: left;
+    color: white;
 }
 
 .container h1 {
@@ -102,9 +96,8 @@ header h1 {
 
 .container a {
     font-size: 16px;
-    display: inline-block;
     color: white;
-    font-weight: 500;
+    text-decoration: none;
 }
 
 .products {
@@ -114,10 +107,9 @@ header h1 {
 }
 
 .product {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
 .cards {
@@ -131,8 +123,7 @@ header h1 {
 .card h2 {
     font-weight: 500;
     font-size: 24px;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    margin: 10px 0;
 }
 
 .card h3 {
@@ -145,10 +136,8 @@ header h1 {
     display: flex;
     font-size: 36px;
     font-weight: 600;
-    text-align: center;
     margin-bottom: 40px;
 }
-
 
 .footer {
     background-color: #f7f6f5;
